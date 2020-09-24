@@ -1,21 +1,35 @@
 #############################################################################################################
-###                 localPLSR                 ###############################################################
+##                  localPLSR                 ###############################################################
 #############################################################################################################
 ##
-## Summary: Using spectral neighbours in a large scale soil spectral library to estimate soil properties in a dataset.
+## Summary: Using spectral neighbours in a large scale soil spectral library to estimate soil properties of soil samples in a dataset.
 ##
 ## Details on this method can be found in:
 ## Ward, K.J.; Chabrillat, S.; Neumann, C.; Foerster, S. A remote sensing adapted approach for soil organic 
 ## carbon prediction based on the spectrally clustered lucas soil database. Geoderma 2019, 353, 297-307 
 
+## Copyright (C) 2020
+## - Kathrin J. Ward (GFZ, kathrin.ward@gfz-potsdam.de), 
+## - Saskia Foerster (GFZ, saskia.foerster@gfz-potsdam.de), 
+## - Sabine Chabrillat (GFZ, sabine.chabrillat@gfz-potsdam.de),
+## - Helmholtz Centre Potsdam, German Research Centre for Geosciences (GFZ, https://www.gfz-potsdam.de/startseite/)
 
+## This program was developed within the context of the following publicly funded projects:
+## - EnMAP scientific preparation program under the DLR Space Administration, German Federal Ministry of Economic Affairs and Energy, 
+##   grant number 50EE1529 (https://www.enmap.org/)
 
-###############################################################
-## Author: Kathrin J. Ward
-## GFZ Potsdam, section 1.4 Remote sensing and Geoinformatics
-## kathrin.ward@gfz-potsdam.de
-## 15th July 2020
-###############################################################
+## Licensed under the EUPL, Version 1.2
+
+## You may not use this work except in compliance with the Licence.
+
+## You may obtain a copy of the Licence at: 
+## https://joinup.ec.europa.eu/software/page/eupl
+
+## Unless required by applicable law or agreed to in writing, software 
+## distributed under the Licence is distributed on an "AS IS" basis, 
+## WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or 
+## implied. See the Licence for the specific language governing 
+## permissions and limitations under the Licence.
 
 
 
