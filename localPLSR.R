@@ -27,7 +27,7 @@
 ## modified version, used to produce the published results in scientific 
 ## communications) commit to make this modified source code available in 
 ## a repository that is easily and freely accessible for a duration of 
-##five years after the communication of the obtained results.
+## five years after the communication of the obtained results.
 
 
 ## You may not use this work except in compliance with the Licence.
