@@ -10,8 +10,8 @@
 
 ## Copyright (C) 2020
 ## - Kathrin J. Ward (GFZ, kathrin.ward@gfz-potsdam.de), 
-## - Saskia Foerster (GFZ, saskia.foerster@gfz-potsdam.de), 
 ## - Sabine Chabrillat (GFZ, sabine.chabrillat@gfz-potsdam.de),
+## - Saskia Foerster (GFZ, saskia.foerster@gfz-potsdam.de), 
 ## - Helmholtz Centre Potsdam, German Research Centre for Geosciences (GFZ, https://www.gfz-potsdam.de/startseite/)
 
 ## This program was developed within the context of the following publicly funded projects:
