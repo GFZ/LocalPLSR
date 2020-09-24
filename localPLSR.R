@@ -18,7 +18,17 @@
 ## - EnMAP scientific preparation program under the DLR Space Administration, German Federal Ministry of Economic Affairs and Energy, 
 ##   grant number 50EE1529 (https://www.enmap.org/)
 
-## Licensed under the EUPL, Version 1.2
+## Licensed under the EUPL, Version 1.2 or - as soon they will be 
+## approved by the European Commission - subsequent versions of the EUPL 
+## (the "Licence"), complemented with the following provision: 
+## For the scientific transparency and verification of results obtained 
+## and communicated to the public after using a modified version of the 
+## work, You (as the recipient of the source code and author of this 
+## modified version, used to produce the published results in scientific 
+## communications) commit to make this modified source code available in 
+## a repository that is easily and freely accessible for a duration of 
+##five years after the communication of the obtained results.
+
 
 ## You may not use this work except in compliance with the Licence.
 
