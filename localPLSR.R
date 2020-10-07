@@ -17,10 +17,12 @@
 ## This program was developed within the context of the following publicly funded projects:
 ## - EnMAP scientific preparation program under the DLR Space Administration, German Federal Ministry of Economic Affairs and Energy, 
 ##   grant number 50EE1529 (https://www.enmap.org/)
-
-## Licensed under the EUPL, Version 1.2 or - as soon they will be 
-## approved by the European Commission - subsequent versions of the EUPL 
-## (the "Licence"), complemented with the following provision: 
+## 
+## This program is free software: you can redistribute it and/or modify
+## it under the terms of the GNU General Public License as published by
+## the Free Software Foundation, either version 3 of the License, or
+## (at your option) any later version, complemented with 
+## the following provision: 
 ## For the scientific transparency and verification of results obtained 
 ## and communicated to the public after using a modified version of the 
 ## work, You (as the recipient of the source code and author of this 
@@ -28,18 +30,14 @@
 ## communications) commit to make this modified source code available in 
 ## a repository that is easily and freely accessible for a duration of 
 ## five years after the communication of the obtained results.
-
-
-## You may not use this work except in compliance with the Licence.
-
-## You may obtain a copy of the Licence at: 
-## https://joinup.ec.europa.eu/software/page/eupl
-
-## Unless required by applicable law or agreed to in writing, software 
-## distributed under the Licence is distributed on an "AS IS" basis, 
-## WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or 
-## implied. See the Licence for the specific language governing 
-## permissions and limitations under the Licence.
+## 
+## This program is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+## GNU General Public License for more details.
+## 
+## You should have received a copy of the GNU General Public License
+## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
@@ -47,7 +45,7 @@ dir <- "/.../" ## change directory
 
 library(signal) ## version 0.7-6
 library(pls) ## version 2.6-0
-library(resemble) # version 1.2.2
+library(StatMatch) ## version 1.4.0
 library(e1071) ## version 1.6-8
 
 
@@ -86,13 +84,13 @@ save(d1_cal,file="CAL_SG1D_n11.Rdata")
 save(d1_val,file="VAL_SG1D_n11.Rdata")
 
 ## calculate Mahalanobis distance based on first principal components of PCA
-pca1d <- princomp(input[,3:ncol(input)]) ## PCA of spectra; hint: if there are more bands than samples, duplicate samples
-cums <- cumsum(pca1d$sdev^2 / sum(pca1d$sdev^2)) 
+pca <- princomp(input[,3:ncol(input)]) ## PCA of spectra; hint: if there are more bands than samples, duplicate samples
+cums <- cumsum(pca$sdev^2 / sum(pca$sdev^2)) 
 cums[1:40] ## check number of PC to be used (e.g. which explain > 99.5% of variance)
-pca1dn <- pca1d$scores[,1:7] ## select number of PC to be used
-mdist <- fDiss(pca1dn,method="mahalanobis",center=T,scaled=T) ## calculate distance matrix, e.g. Mahalanobis (package resemble)
-rownames(mdist) <- rownames(pca1dn) ## add rownames
-colnames(mdist) <- rownames(pca1dn) ## add columnnames
+pcas <- pca$scores[,1:7] ## select number of PC to be used
+mdist <- mahalanobis.dist(pcas) ## calculate distance matrix, e.g. Mahalanobis (package StatMatch)
+rownames(mdist) <- rownames(pcas) ## add rownames
+colnames(mdist) <- rownames(pcas) ## add columnnames
 mdist <- as.data.frame(mdist)
 
 setwd(dir)
@@ -364,11 +362,9 @@ load("MDist_PCA_calval.Rdata") ## mdist; data frame with Mahalanobis distance in
 
 
 ## apply local PLSR function ###
-## example with a threshold in Mahalanobis distance of < 0.19 and a minumum of 200 samples used for calibration
+## example with a threshold in Mahalanobis distance of < 1.33 and a minumum of 200 samples used for calibration
 t1 <- Sys.time() ## takes a while depending on size of dataset ;-)
-result <- LOCAL(cal=d1_cal2,val=d1_val2,diss=mdist,K=rep(seq(0.19,0.19,0.01),1),ncom=40,direc=dir06,meth="MahalDist",out=F, 
+result <- LOCAL(cal=d1_cal2,val=d1_val2,diss=mdist,K=rep(seq(1.33,1.33,0.01),1),ncom=40,direc=dir06,meth="MahalDist",out=F, 
                 fixed=F,gt=F,minsamp=200,repe=100) 
 Sys.time()-t1
-
-
 
