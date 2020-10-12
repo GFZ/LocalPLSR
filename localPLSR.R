@@ -20,8 +20,7 @@
 ## 
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
-## the Free Software Foundation, either version 3 of the License, or
-## (at your option) any later version, complemented with 
+## the Free Software Foundation, version 2 of the License, complemented with 
 ## the following provision: 
 ## For the scientific transparency and verification of results obtained 
 ## and communicated to the public after using a modified version of the 
