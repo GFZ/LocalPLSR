@@ -40,3 +40,9 @@ Quantification of soil parameters e.g. organic carbon, in field soil samples usi
     * Examples of PCA and Mahalanobis distance
 * LocalPLSR function
 * Application example of localPLSR function
+
+**How to run this script**
+* Open and run this script in R
+* Ensure to install the required R libraries prior to running the script
+* Further user specific adaptations of the script might be necessary of which some are indicated by comments 
+* The examples given for data preparation and application of the localPLSR function should be adapted to your data
