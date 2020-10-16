@@ -45,3 +45,6 @@ Quantification of soil parameters e.g. organic carbon, in field soil samples usi
 * Ensure to install the required R libraries prior to running the script
 * Further user specific adaptations of the script might be necessary of which some are indicated by comments 
 * The examples given for data preparation and application of the localPLSR function should be adapted to your data
+
+**How to cite this script**
+* Ward, K.J., Chabrillat, S., Foerster, S. (2020): localPLSR. https://github.com/GFZ/LocalPLSR DOI: 10.5281/zenodo.4095351
